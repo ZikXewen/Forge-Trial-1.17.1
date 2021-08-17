@@ -14,7 +14,7 @@ import com.dezilaicosed.pay_ging.core.init.ItemInit;
 @Mod(PayGing.MOD_ID)
 public class PayGing {
     public static final String MOD_ID = "pay_ging";
-    public static final PayGingTab TAB = new PayGingTab("pay_ging_all");
+    public static final PayGingTab TAB = new PayGingTab(MOD_ID);
 
     public PayGing() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
