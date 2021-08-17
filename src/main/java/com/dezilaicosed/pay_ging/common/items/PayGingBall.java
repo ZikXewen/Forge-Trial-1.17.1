@@ -14,8 +14,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-// import net.minecraftforge.api.distmarker.Dist;
-// import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class PayGingBall extends Item {
     public PayGingBall(Properties properties) {
@@ -23,7 +21,6 @@ public class PayGingBall extends Item {
     }
 
     @Override
-    // @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, level, tooltip, tooltipFlag);
         if (Screen.hasShiftDown()) {
@@ -35,7 +32,12 @@ public class PayGingBall extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
-        player.addEffect(new MobEffectInstance(MobEffects.LUCK, 400, 1));
-        return InteractionResultHolder.success(player.getItemInHand(interactionHand));
+        if (!player.getCooldowns().isOnCooldown(this)) {
+            player.addEffect(new MobEffectInstance(MobEffects.LUCK, 400, 1));
+            player.getCooldowns().addCooldown(this, 800);
+            return InteractionResultHolder.success(player.getItemInHand(interactionHand));
+        } else {
+            return InteractionResultHolder.fail(player.getItemInHand(interactionHand));
+        }
     }
 }
