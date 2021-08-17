@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import com.dezilaicosed.pay_ging.core.init.BlockInit;
 import com.dezilaicosed.pay_ging.core.init.ItemInit;
 
 import org.apache.logging.log4j.LogManager;
@@ -22,6 +23,7 @@ public class PayGing {
         bus.addListener(this::setup);
 
         ItemInit.ITEMS.register(bus);
+        BlockInit.BLOCKS.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
