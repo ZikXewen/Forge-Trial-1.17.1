@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "pay_ging:pay_ging_block"
+  },
+  "result": "pay_ging:pay_ging",
+  "count": 9
+}

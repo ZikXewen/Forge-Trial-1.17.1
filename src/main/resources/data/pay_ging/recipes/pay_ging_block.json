@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "###", "###"],
+  "key": {
+    "#": {
+      "item": "pay_ging:pay_ging"
+    }
+  },
+  "result": {
+    "item": "pay_ging:pay_ging_block",
+    "count": 1
+  }
+}
