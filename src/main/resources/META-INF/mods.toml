@@ -1,0 +1,26 @@
+modLoader="javafml" 
+loaderVersion="[37,)" 
+license="All rights reserved"
+[[mods]] 
+modId="pay_ging" 
+version="1.0" 
+displayName="Pay Ging Forge" 
+credits="Thanks to pay for being ging"
+authors="Dezilaicosed" 
+description='''
+A mod containing inside jokes in my group of friends.
+
+It is not supposed to be released into the wild.
+'''
+[[dependencies.pay_ging]] 
+    modId="forge" 
+    mandatory=true 
+    versionRange="[37,)"    
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.pay_ging]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17.1,1.18)"
+    ordering="NONE"
+    side="BOTH"
